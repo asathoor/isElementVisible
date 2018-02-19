@@ -78,12 +78,10 @@ var elementet = document.getElementById("synlig");
 window.addEventListener("scroll", function(){
     
     if ( elFllVsbl( elementet ) ){ 
-        console.log("player is visible");  
+        console.log("play video");  
         player.playVideo();
-        
-        
     } else {
-        console.log("I cannot see the ytplayer")
+        console.log("pause video")
         player.pauseVideo();
     }
  }
