@@ -14,15 +14,6 @@
 
 <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
 
-<!-- end slipsum code -->
-   
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="synlig">
-        <div id="player"></div>
-    </div>
-    
-    <!-- start slipsum code -->
-
 <p>Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit.  </p>
 
 <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing. </p>
@@ -34,9 +25,10 @@
 <p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
 
 <!-- end slipsum code -->
-    
- <div id="ytplayer"></div>
-
+ <div id="synlig">
+     <div id="ytplayer"></div>
+</div> 
+  
 <script>
   // Load the IFrame Player API code asynchronously.
   var tag = document.createElement('script');
@@ -59,9 +51,14 @@
     })
   }
       
-    //var video = document.getElementById("myVideo");
-    
+
+/* Player kontrolleres af funktioner */    
     function onPlayerReady( event ) {
+        console.log("player is ready");
+        event.target.pauseVideo();
+      }
+    
+    function playItSam( event ) {
         console.log("player is ready");
         event.target.playVideo();
       }
@@ -75,7 +72,26 @@
         }
       }
 
+/* is element visible? if ok playVideo() */
+var elementet = document.getElementById("synlig");    
+    
+window.addEventListener("scroll", function(){
+    
+    if ( elFllVsbl( elementet ) ){ 
+        console.log("player is visible");  
+        player.playVideo();
+        
+        
+    } else {
+        console.log("I cannot see the ytplayer")
+        player.pauseVideo();
+    }
+ }
+); // end eventlistener
 
+function elFllVsbl(el){
+    return ( el.getBoundingClientRect().top>=0 &&  el.getBoundingClientRect().bottom<window.innerHeight);
+}
   
 </script>   
  
