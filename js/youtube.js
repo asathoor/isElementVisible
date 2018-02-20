@@ -32,7 +32,7 @@ function onPlayerReady( event ) {
 
 function playItSam( event ) {
     console.log("player is ready");
-    event.target.playVideo();
+    event.target.playVideo(); // event from player
   }
 
 function onPlayerStateChange(){
@@ -49,16 +49,24 @@ var elementet = document.getElementById("synlig");
 
 window.addEventListener("scroll", function(){
 
-if ( elFllVsbl( elementet ) ){ 
-    console.log("play video");  
-    player.playVideo();
-} else {
-    console.log("pause video")
-    player.pauseVideo();
-}
-}
+        if ( elFllVsbl( elementet ) ){ 
+            console.log("play video");  
+            player.playVideo(); // with player you can manipulate the video
+        } else {
+            console.log("pause video")
+            player.pauseVideo();
+        }
+    }
 ); // end eventlistener
 
 function elFllVsbl(el){
-return ( el.getBoundingClientRect().top>=0 &&  el.getBoundingClientRect().bottom<window.innerHeight);
+    return ( el.getBoundingClientRect().top>=0 &&  el.getBoundingClientRect().bottom<window.innerHeight);
 }
+
+/**
+WHERE TO GO FROM HERE
+
+* Control the video when the user clicks on an icon.
+* Control via eventlisteners, such as mouse over, mouse out etc.
+
+**/
