@@ -1,6 +1,6 @@
 /**
  * fil: audio.js
- * eksempel fra Bror Arnfast
+ * purpose: play audio when the containing div is visible
  **/
 window.addEventListener("scroll", function() {
 
