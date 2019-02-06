@@ -8,7 +8,7 @@ window.addEventListener("scroll", function() {
   var lyd = document.getElementById("lyd");
   console.log("Er div #lyd synlig? " + elFllVsbl(lyd));
 
-  if (elFllVsbl(lyd)) {
+  if (elFllVsbl(lyd)) { // if the #lyd div is visible then
     if (!(mySound.curentTime > 0)) {
       mySound.play(); // play audio
     }
@@ -18,6 +18,12 @@ window.addEventListener("scroll", function() {
   }
 })
 
+// this function will check whether a tag is visible
 function elFllVsbl(el) {
   return (el.getBoundingClientRect().top >= 0 && el.getBoundingClientRect().bottom < window.innerHeight);
 }
+
+/*
+NB: the audio / video tags will allways return true,
+solution: place the tag in a div and test for the div in stead
+*/
