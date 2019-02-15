@@ -14,5 +14,3 @@ if (elFllVsbl ( mySound )){ ...
 ~~~~
 
 The solution is inspired by an original idea by Bror Arnfast.
-
-XXXX
