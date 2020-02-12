@@ -1,0 +1,8 @@
+
+
+el.getBoundingClientRect().top >= 0 
+
+&& 
+
+el.getBoundingClientRect().bottom < window.innerHeight
+
