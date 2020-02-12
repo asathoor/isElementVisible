@@ -4,9 +4,9 @@
  **/
 window.addEventListener("scroll", function() { // detect scroll event
 
-  var mySound = document.getElementById("myaudio"); // select audio id
-  var lyd = document.getElementById("lyd");
-  console.log("Er div #lyd synlig? " + elFllVsbl(lyd)); // test
+  let mySound = document.getElementById("myaudio"); // select audio id
+  let lyd = document.getElementById("lyd");
+  console.log("Is the #lyd visible or not? " + elFllVsbl(lyd)); // test
 
 // Below: start and stop audio 
   if (elFllVsbl(lyd)) { // if the #lyd div is visible then
