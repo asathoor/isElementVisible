@@ -24,8 +24,8 @@ window.addEventListener("scroll", function () { // detect scroll event
 
 
 	console.log('Is the video #iSee visible? ' + elFllVsbl(iSee));
-// video visible test
-	if (elFllVsbl( iSee )) { // if the #lyd div is visible then
+	// video visible test
+	if (elFllVsbl(iSee)) { // if the #lyd div is visible then
 		if (!(myVideo.curentTime > 0)) {
 			myVideo.play(); // play video
 		}
