@@ -28,4 +28,13 @@ A suggested solution is [see this thread on Stackoverflow](https://stackoverflow
 
 ## If the video is larger than the viewport
 
-*Suggested by a student:* If the video is larger than the window you could add a div - and simply add the video via JavaScript somewhere convenient. 
+*Suggested by a student:* If the video is larger than the window you could add a div with an id. When the video is visible add the video via JavaScript somewhere convenient.
+
+E.g. a script along these lines:
+
+~~~~
+let srcTag = document.createElement("source");
+let video2src = "media/parade-edinburgh-2015.MP4";
+srcTag.src = video2src;
+document.getElementById('video2').appendChild(srcTag);
+~~~~
