@@ -6,6 +6,7 @@ window.addEventListener("scroll", function() { // detect scroll event
 
   let mySound = document.getElementById("myaudio"); // select audio id
   let lyd = document.getElementById("lyd");
+    
   console.log("Is the #lyd visible or not? " + elFllVsbl(lyd)); // test
 
 // Below: start and stop audio 
@@ -20,8 +21,9 @@ window.addEventListener("scroll", function() { // detect scroll event
 })
 
 // this function will check whether a tag is visible
-function elFllVsbl(el) {
-  return (el.getBoundingClientRect().top >= 0 && el.getBoundingClientRect().bottom < window.innerHeight);
+function elFllVsbl( el ) {
+  return (
+      el.getBoundingClientRect().top >= 0 && el.getBoundingClientRect().bottom < window.innerHeight);
 }
 
 /*
